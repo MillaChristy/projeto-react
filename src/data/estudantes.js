@@ -25,14 +25,14 @@ export const estudantes = [
     experienciaPositiva: "Morar sozinha",
   },
   {
-    foto: "https://lh3.googleusercontent.com/drive-viewer/AEYmBYQBr34DjMUUKCeLBXhKwMRhaGU-ioi_wS8IU_cOa1pz_TbapWWL8nX24-I-cigpPdSNRTOrgTtrTHAst72GVffYSf8Z=s1600",
+    foto: "https://newsone.com/wp-content/uploads/sites/22/2021/12/16395719695872.jpg?strip=all&quality=80",
     nome: "Cailane Gois",
     comidaQueNaoGosta: "Alimentos com muita azeitona",
     experienciaPositiva:
       "Participar de um programa de empoderamento feminino e inovação organizado pela Embaixada dos EUA e o Instituto Glória, apresentei em equipe em DF e foi minha primeira viagem de avião.",
   },
   {
-    foto: "https://lh3.googleusercontent.com/drive-viewer/AEYmBYSEDCRJXFrjT1Ae0OQfW0mp253NqeadoxhfK_pOHbu6_oYw7CRO5woopQcLJYohkPtkumEbcgx4MZY1W-DCl_liuRQumA=s2560",
+    foto: "https://newsone.com/wp-content/uploads/sites/22/2021/12/16395719695872.jpg?strip=all&quality=80",
     nome: "Larissa Bispo",
     comidaQueNaoGosta: "A que não existe",
     experienciaPositiva: "Intercâmbio em South Africa",
@@ -50,7 +50,7 @@ export const estudantes = [
     experienciaPositiva: "ser mãe da minha pequena",
   },
   {
-    foto: "https://lh3.googleusercontent.com/drive-viewer/AEYmBYS5CvjFWSdzikKGWV3poc7IXGj2HsOTSZCAX9lz4Uz7erMLChC2JhYlOC6pvpgIF5HrkJxFC8eVRgji5aA5zAuAtn7y=s2560",
+    foto: "https://newsone.com/wp-content/uploads/sites/22/2021/12/16395719695872.jpg?strip=all&quality=80",
     nome: "Jéssica Caroline  Pires Cabral",
     comidaQueNaoGosta: "Pequi",
     experienciaPositiva: "Acompanhar o nascimento do meu sobrinho.",
@@ -81,7 +81,7 @@ export const estudantes = [
     experienciaPositiva: "",
   },
   {
-    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRwIkDXvz-JqYxJJeNfBNe_DObInG-AV2ZLOqU9hkexdtHgnKEj0cS3U8eIslhYU3LxXM&usqp=CAU",
+    foto: "https://newsone.com/wp-content/uploads/sites/22/2021/12/16395719695872.jpg?strip=all&quality=80",
     nome: "Dayana Santos",
     comidaQueNaoGosta: "coxinha de jaca",
     experienciaPositiva: "fiz 30 anos e decidi estudar programação",

@@ -6,6 +6,8 @@ import "./styles.css";
 const PokemonPage = () => {
   const [referenciasPokemons, setReferenciasPokemons] = useState([]);
   const [listaPokemons, setListaPokemons] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const pegar100ReferenciasPokemons = async () => {
     try {
@@ -18,32 +20,53 @@ const PokemonPage = () => {
     }
   };
 
+  const pegarListaDePokemons = async () => {
+    const promises = referenciasPokemons.map((referencia) =>
+      axios.get(referencia.url)
+    );
+
+    try {
+      const respostas = await Promise.all(promises);
+      setListaPokemons(respostas.map((resposta) => resposta.data));
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Erro ao buscar os pokemons", error);
+    }
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredPokemons = listaPokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   useEffect(() => {
     pegar100ReferenciasPokemons();
   }, []);
 
-  const pegarListaDePokemons = async () => {
-    const listaTemporaria = [];
-
-    for (const referencia of referenciasPokemons) {
-      try {
-        const resposta = await axios.get(referencia.url);
-        listaTemporaria.push(resposta.data);
-      } catch (error) {
-        console.error("Erro ao buscar o pokemon", error);
-      }
-    }
-
-    setListaPokemons(listaTemporaria);
-  };
-
   useEffect(() => {
-    pegarListaDePokemons();
+    if (referenciasPokemons.length > 0) {
+      pegarListaDePokemons();
+    }
   }, [referenciasPokemons]);
+
+  if (isLoading) {
+    return <div>Carregando</div>;
+  }
+
+
 
   return (
     <div className="pokemon-container">
-      {listaPokemons.map((pokemon) => (
+      <input
+        type="text"
+        placeholder="Pesquisar pokemon..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
+      {filteredPokemons.map((pokemon) => (
         <CardPokemon
           nome={pokemon.name}
           foto={pokemon.sprites.front_default}

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import CircularProgress from '@mui/material/CircularProgress';
+import axios from "axios"; 
 import "./styles.css";
 
 const CardPokemon = ({ url }) => {
   const [pokemonData, setPokemonData] = useState(null);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     async function fetchPokemonData() {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = await axios.get(url); 
+        const data = response.data;
         setPokemonData(data);
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching Pokemon ", error);
       }
@@ -19,8 +21,9 @@ const CardPokemon = ({ url }) => {
     fetchPokemonData();
   }, [url]);
 
-  if (!pokemonData) {
-    return <CircularProgress disableShrink />;
+
+  if (loading) {
+    return <div>Carregando</div>;
   }
 
   const { name: nome, id, sprites: { front_default: foto } } = pokemonData;
